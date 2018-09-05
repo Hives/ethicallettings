@@ -1,8 +1,6 @@
 .main-navigation {
-	clear: both;
 	display: block;
-	float: left;
-	width: 100%;
+	float: right;
 
 	ul {
 		display: none;
@@ -50,24 +48,37 @@
 	}
 
 	li {
-		float: left;
+		display: inline-block;
+		// float: left;
 		position: relative;
+        margin-left: 18px;
+        text-transform: uppercase;
+
+        > a {
+	        border-bottom: 5px solid transparent;
+        }
 
 		&:hover > a,
 		&.focus > a {
+            border-bottom: 5px solid $el_bg;
 		}
 	}
 
 	a {
 		display: block;
 		text-decoration: none;
+        color: $el_fg;
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+        border-bottom: 5px solid $el_green;
 	}
+
+    .current_page_item {
+    }
 }
 
 /* Small menu. */

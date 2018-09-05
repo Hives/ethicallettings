@@ -1,8 +1,45 @@
 .widget {
 	margin: 0 0 1.5em;
 
+	border-bottom: 4px solid $el_blue;
+
 	/* Make sure select elements fit in widgets. */
 	select {
 		max-width: 100%;
+	}
+
+	.textwidget {
+		font-weight: 300;
+		font-style: italic;
+
+		font-size: 1.65rem;
+		line-height: 1.25;		
+
+		p {
+			margin: 0 0 0.5em 0;
+		}
+
+		p::after {
+			display: block;
+			content: "Olivia, tenant";
+			color: $el_blue;
+			font-weight: 700;
+			margin-top: 20px;
+			font-size: 0.85em;
+		}
+	}
+}
+
+@media (max-width: $bp_large) {
+	.widget .textwidget {
+		font-size: 1.4rem;
+		line-height: 1.25;		
+	}
+}
+
+@media (max-width: $bp_med) {
+	.widget  .textwidget {
+		font-size: 1.65rem;
+		line-height: 1.25;		
 	}
 }

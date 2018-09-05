@@ -15,8 +15,8 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div id="primary" class="content-area wrapper">
+		<main id="main" class="site-main left">
 
 		<?php
 		while ( have_posts() ) :

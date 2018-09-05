@@ -129,6 +129,10 @@ function ethicallettings_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Load Raleway from Google fonts.
+	wp_enqueue_style( "Raleway", "https://fonts.googleapis.com/css?family=Raleway:300,300i,500,500i,700,700i", $media = 'all' );
+	
 }
 add_action( 'wp_enqueue_scripts', 'ethicallettings_scripts' );
 
@@ -158,4 +162,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

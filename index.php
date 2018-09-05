@@ -15,8 +15,10 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area left">
 		<main id="main" class="site-main">
+
+			<h1>PISS</h1>
 
 		<?php
 		if ( have_posts() ) :

@@ -41,6 +41,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Paul's stuff
+
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
@@ -104,3 +106,277 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+/*--------------------------------------------------------------
+# Paul's stuff
+--------------------------------------------------------------*/
+
+body {
+        background-color: $el_bg;
+        color: $el_fg;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+#masthead {
+        border-top: 12px solid $el_blue;
+        font-size: 1.15rem;
+        background-color: white;
+        overflow: hidden;
+}
+
+.site-header {
+        margin: 28px auto;
+
+        .phone-number {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                font-weight: bold;
+                font-size: 1.6rem;
+                color: $el_green;
+        }
+
+}
+
+.site-branding {
+        background: url(images/logo.png);
+        background-size: cover;
+        background-position: center;
+
+        width: 144px;
+        height: 77px;
+        
+        text-indent: -9999px;
+        float: left;
+
+        margin: 0 -144px 4px 0;
+}
+
+#site-navigation {
+        margin: 0 0 40px 144px;
+        text-align: right;
+}
+
+#banner-image {
+        width: 100%;
+        height: 185px;
+        background: url("http://www.american-rails.com/images/THMHDPHT.jpg");
+        background-size: cover;
+        background-position: center;
+
+}
+
+/*--------------------------------------------------------------
+# Main bit
+--------------------------------------------------------------*/
+
+.content-area {
+        margin-top: 20px;
+}
+
+.entry-content {
+        margin-top: 0;
+}
+
+.widget-area {
+        margin-top: 150px;
+}
+
+@media (max-width: $bp_med) {
+        #content {
+                // flex-direction: column;
+        }
+        .site-main.left {
+                padding-right: 0;
+        }
+        .widget-area.right {
+                position: relative;
+                margin-left: 0;
+                width: 100%;
+                margin-top: 0;
+        }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+#colophon {
+        border-top: 12px solid $el_blue;
+        background-color: $el_footer;
+        color: $el_bg;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        overflow: hidden;
+}
+
+.site-footer {
+        margin-top: 30px;
+        margin-bottom: 72px;
+}
+
+.contact-details p {
+        margin-bottom: 0;
+}
+
+.social {
+        font-size: 2em;
+        line-height: 1.3;
+        a {
+                color: $el_bg;
+                &:hover {
+                        color: $el_green;
+                }
+        }
+}
+
+.prs-logo {
+        width: $size__site-sidebar-big;
+        position: absolute;
+        bottom: 0;
+}
+
+@media (max-width: $bp_large) {
+        .prs-logo {
+                width: $size__site-sidebar-med;
+        }
+}
+
+@media (max-width: $bp_small) {
+        .prs-logo {
+                position: relative;
+                margin: 10px 0 20px;
+        }
+        .contact-details.left {
+                padding-right: 0;
+                margin-bottom: 20px;
+        }
+}
+ 
+/*--------------------------------------------------------------
+# Flekthi layout
+--------------------------------------------------------------*/
+
+.full-width {
+        position: relative;
+        width: 90%;
+        max-width: $size__site_full;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+#content, .site-footer {
+        // display: flex;
+}
+
+.wrapper {
+        width: 100%;
+        float: left;
+        margin-right: (-$size__site-sidebar-big - 60px);
+}
+
+.left {
+        width: 100%;
+        padding-right: ($size__site-sidebar-big + 60px);
+        // flex: 1 1 auto;
+        float: left;
+}
+
+.right {
+        // flex: 0 0 auto;
+        float: right;
+        width: $size__site-sidebar-big;
+        // margin-left: 60px;
+        // position: absolute;
+        top: 0;
+        right: 0;
+
+}
+
+@media (max-width: $bp_large) {
+        .wrapper {
+                margin-right: (-$size__site-sidebar-med - 40px);                
+        }
+        .left {
+                width: 100%;
+                padding-right: ($size__site-sidebar-med + 40px);
+        }
+        .right {
+                width: $size__site-sidebar-med;
+                // margin-left: 40px;
+        }
+}
+
+@media (max-width: $bp_small) {
+        .site-footer {
+                flex-direction: column-reverse;
+        }
+        .left {
+                // max-width: ($size__site_full - $size__site-sidebar-med - 40px)
+        }
+        .right {
+                position: relative;
+                margin-left: 0;
+                width: 100%;
+        }
+}
+
+
+/*--------------------------------------------------------------
+# Iconth
+--------------------------------------------------------------*/
+
+.icon::before {
+        font-family: "Font Awesome 5 Free";
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-weight: 900;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        margin-right: 0.4em;
+}
+
+.site-footer .icon::before {
+        margin-right: 1em;
+        color: $el_green;
+}
+
+// flip the phone icon
+.phone-number.icon::before {
+        -moz-transform: scale(-1, 1);
+        -webkit-transform: scale(-1, 1);
+        -o-transform: scale(-1, 1);
+        -ms-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+}
+
+//
+//  TEST SERVER WARNING
+//
+
+#test-server-warning {
+        background-image: url(images/stripe.png);
+        background-color: yellow;
+        padding: 10px;
+
+        div {
+                background-color: rgba(255, 255, 255, 0.85);
+                padding: 10px;
+
+                width: $size__site_full;
+                margin: 0 auto;
+
+        }
+        p {
+                margin: 0;
+        }
+        p.warning {
+                font-weight: bold;
+                font-size: 150%;
+        }
+}
