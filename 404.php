@@ -10,8 +10,8 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div id="primary" class="content-area wrapper">
+		<main id="main" class="site-main left">
 
 			<section class="error-404 not-found">
 				<header class="page-header">
