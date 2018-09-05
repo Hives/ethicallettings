@@ -26,9 +26,9 @@ $environment = WP_DEBUG == true ? "local" : "production";
 
 <?php if ( $environment == "local" ) { ?>
 	<div id="test-server-warning">
-		<div class= "vertical-section">
+		<div class= "vertical-section full-width">
 			<p class="warning">
-				This is a test version of the site
+				<i class="fas fa-exclamation-triangle"></i> This is a test version of the site <i class="fas fa-exclamation-triangle"></i>
 			</p>
 		</div>
 	</div>
@@ -55,7 +55,7 @@ $environment = WP_DEBUG == true ? "local" : "production";
 			</a>
 
 			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ethicallettings' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'ethicallettings' ); ?></button>
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',

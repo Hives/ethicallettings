@@ -111,7 +111,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Paul's stuff
 --------------------------------------------------------------*/
 
-body {
+#page {
         background-color: $el_bg;
         color: $el_fg;
 }
@@ -122,23 +122,47 @@ body {
 
 #masthead {
         border-top: 12px solid $el_blue;
-        font-size: 1.15rem;
-        background-color: white;
-        overflow: hidden;
+        background-color: $el_white;
+        // overflow: hidden;
 }
 
+$header_padding: 28px;
+
 .site-header {
-        margin: 28px auto;
+        padding-top: $header_padding;
+        padding-bottom: $header_padding;
 
         .phone-number {
                 position: absolute;
-                bottom: 0;
+                bottom: $header_padding;
                 right: 0;
                 font-weight: bold;
                 font-size: 1.6rem;
                 color: $el_green;
+
+                margin-right: 40px;
         }
 
+}
+
+@media screen and (max-width: $bp_large) {
+        .site-header .phone-number {
+                margin-right: 30px;
+        }
+}
+
+@media screen and (max-width: $bp_med) {
+        .site-header .phone-number {
+                font-size: 1.4rem;
+                bottom: auto;
+                top: $header_padding;
+        }
+}
+
+@media screen and (max-width: $bp_small) {
+        .site-header .phone-number {
+                margin-right: 20px;
+        }
 }
 
 .site-branding {
@@ -155,11 +179,6 @@ body {
         margin: 0 -144px 4px 0;
 }
 
-#site-navigation {
-        margin: 0 0 40px 144px;
-        text-align: right;
-}
-
 #banner-image {
         width: 100%;
         height: 185px;
@@ -170,8 +189,33 @@ body {
 }
 
 /*--------------------------------------------------------------
+# Navigation (see also _menus.scss)
+--------------------------------------------------------------*/
+
+#site-navigation {
+        text-align: right;
+        font-size: 1.15rem;
+}
+
+@media (max-width: $bp_large) {
+        #site-navigation{
+                font-size: 1.07rem;
+        }
+}
+
+.menu-toggle {
+        font-size: inherit;
+        text-transform: uppercase;        
+}
+
+/*--------------------------------------------------------------
 # Main bit
 --------------------------------------------------------------*/
+
+.site-content {
+        position: relative;
+        z-index: 1;
+}
 
 .content-area {
         margin-top: 20px;
@@ -262,10 +306,26 @@ body {
 
 .full-width {
         position: relative;
-        width: 90%;
+        width: 100%;
         max-width: $size__site_full;
         margin-left: auto;
         margin-right: auto;
+        padding-left: 40px;
+        padding-right: 40px;
+}
+
+@media (max-width: $bp_large) {
+        .full-width {
+                padding-left: 30px;
+                padding-right: 30px;
+        }
+}
+
+@media (max-width: $bp_small) {
+        .full-width {
+                padding-left: 20px;
+                padding-right: 20px;
+        }
 }
 
 #content, .site-footer {
@@ -324,6 +384,14 @@ body {
         }
 }
 
+/*--------------------------------------------------------------
+# Paul's typography and styling
+--------------------------------------------------------------*/
+
+hr {
+        background-color: $el_blue;
+        height: 2px;
+}
 
 /*--------------------------------------------------------------
 # Iconth
@@ -355,28 +423,35 @@ body {
         transform: scale(-1, 1);
 }
 
-//
-//  TEST SERVER WARNING
-//
+/*--------------------------------------------------------------
+# Test version warning
+--------------------------------------------------------------*/
 
 #test-server-warning {
         background-image: url(images/stripe.png);
         background-color: yellow;
-        padding: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
 
-        div {
-                background-color: rgba(255, 255, 255, 0.85);
-                padding: 10px;
-
-                width: $size__site_full;
-                margin: 0 auto;
-
-        }
         p {
+                background-color: rgba(255, 255, 255, 0.85);
                 margin: 0;
         }
         p.warning {
+                padding: 10px;
+
+                text-align: center;
                 font-weight: bold;
-                font-size: 150%;
+                font-size: 2rem;
+
+                i {
+                        color: #880000;
+                }
+        }
+}
+
+@media (max-width: $bp_small) {
+        #test-server-warning p.warning {
+                font-size: 1.3rem;
         }
 }
