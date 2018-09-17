@@ -51,21 +51,24 @@
 		display: inline-block;
 		// float: left;
 		position: relative;
-        margin-left: 18px;
+        margin-left: 15px;
         text-transform: uppercase;
 
+		padding-top: 5px;
+		padding-bottom: 5px;
+		
         > a {
 	        border-bottom: 5px solid transparent;
         }
 
 		&:hover > a,
 		&.focus > a {
-            border-bottom: 5px solid $el_bg;
+            border-bottom: 5px solid $el_mediumgrey;
 		}
 	}
 
 	a {
-		display: block;
+		// display: block;
 		text-decoration: none;
         color: $el_fg;
 	}

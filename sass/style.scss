@@ -137,10 +137,10 @@ $header_padding: 28px;
                 bottom: $header_padding;
                 right: 0;
                 font-weight: bold;
-                font-size: 1.6rem;
+                // font-size: 1.6rem;
                 color: $el_green;
 
-                margin-right: 40px;
+                margin-right: 55px;
         }
 
 }
@@ -165,13 +165,19 @@ $header_padding: 28px;
         }
 }
 
+@media screen and (max-width: $bp_really_small) {
+        .site-header .phone-number {
+                font-size: 1rem;
+        }
+}
+
 .site-branding {
         background: url(images/logo.png);
         background-size: cover;
         background-position: center;
 
-        width: 144px;
-        height: 77px;
+        width: 128px;
+        height: 69px;
         
         text-indent: -9999px;
         float: left;
@@ -194,7 +200,7 @@ $header_padding: 28px;
 
 #site-navigation {
         text-align: right;
-        font-size: 1.15rem;
+        font-size: 1rem;
 }
 
 @media (max-width: $bp_large) {
@@ -226,7 +232,8 @@ $header_padding: 28px;
 }
 
 .widget-area {
-        margin-top: 150px;
+        margin-top: 47px;
+        margin-bottom: 100px;
 }
 
 @media (max-width: $bp_med) {
@@ -310,8 +317,8 @@ $header_padding: 28px;
         max-width: $size__site_full;
         margin-left: auto;
         margin-right: auto;
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 55px;
+        padding-right: 55px;
 }
 
 @media (max-width: $bp_large) {
@@ -335,12 +342,12 @@ $header_padding: 28px;
 .wrapper {
         width: 100%;
         float: left;
-        margin-right: (-$size__site-sidebar-big - 60px);
+        margin-right: (-$size__site-sidebar-big - 55px);
 }
 
 .left {
         width: 100%;
-        padding-right: ($size__site-sidebar-big + 60px);
+        padding-right: ($size__site-sidebar-big + 55px);
         // flex: 1 1 auto;
         float: left;
 }

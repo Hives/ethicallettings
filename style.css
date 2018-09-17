@@ -44,6 +44,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 --------------------------------------------------------------*/
 /* PM */
+@import 'fonts/rawline/rawline.css';
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -389,9 +390,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: "Raleway", sans-serif;
-  font-size: 19.2px;
-  font-size: 1.2rem;
+  font-family: "Rawline", sans-serif;
   line-height: 1.5;
 }
 
@@ -654,17 +653,18 @@ a:hover, a:active {
 .main-navigation li {
   display: inline-block;
   position: relative;
-  margin-left: 18px;
+  margin-left: 15px;
   text-transform: uppercase;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .main-navigation li > a {
   border-bottom: 5px solid transparent;
 }
 .main-navigation li:hover > a, .main-navigation li.focus > a {
-  border-bottom: 5px solid #e5e5e5;
+  border-bottom: 5px solid #8f8e8e;
 }
 .main-navigation a {
-  display: block;
   text-decoration: none;
   color: #57585b;
 }
@@ -889,6 +889,10 @@ a:hover, a:active {
     font-size: 1.65rem;
     line-height: 1.25;
   }
+
+  .widget {
+    border-bottom: 0px;
+  }
 }
 /*--------------------------------------------------------------
 # Content
@@ -1056,9 +1060,8 @@ object {
   bottom: 28px;
   right: 0;
   font-weight: bold;
-  font-size: 1.6rem;
   color: #89Ab2D;
-  margin-right: 40px;
+  margin-right: 55px;
 }
 
 @media screen and (max-width: 950px) {
@@ -1078,12 +1081,17 @@ object {
     margin-right: 20px;
   }
 }
+@media screen and (max-width: 375px) {
+  .site-header .phone-number {
+    font-size: 1rem;
+  }
+}
 .site-branding {
   background: url(images/logo.png);
   background-size: cover;
   background-position: center;
-  width: 144px;
-  height: 77px;
+  width: 128px;
+  height: 69px;
   text-indent: -9999px;
   float: left;
   margin: 0 -144px 4px 0;
@@ -1102,7 +1110,7 @@ object {
 --------------------------------------------------------------*/
 #site-navigation {
   text-align: right;
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 
 @media (max-width: 950px) {
@@ -1132,7 +1140,8 @@ object {
 }
 
 .widget-area {
-  margin-top: 150px;
+  margin-top: 47px;
+  margin-bottom: 100px;
 }
 
 @media (max-width: 750px) {
@@ -1180,14 +1189,14 @@ object {
 }
 
 .prs-logo {
-  width: 220px;
+  width: 190px;
   position: absolute;
   bottom: 0;
 }
 
 @media (max-width: 950px) {
   .prs-logo {
-    width: 200px;
+    width: 175px;
   }
 }
 @media (max-width: 675px) {
@@ -1210,8 +1219,8 @@ object {
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 55px;
+  padding-right: 55px;
 }
 
 @media (max-width: 950px) {
@@ -1229,34 +1238,34 @@ object {
 .wrapper {
   width: 100%;
   float: left;
-  margin-right: -280px;
+  margin-right: -245px;
 }
 
 .left {
   width: 100%;
-  padding-right: 280px;
+  padding-right: 245px;
   float: left;
 }
 
 .right {
   float: right;
-  width: 220px;
+  width: 190px;
   top: 0;
   right: 0;
 }
 
 @media (max-width: 950px) {
   .wrapper {
-    margin-right: -240px;
+    margin-right: -215px;
   }
 
   .left {
     width: 100%;
-    padding-right: 240px;
+    padding-right: 215px;
   }
 
   .right {
-    width: 200px;
+    width: 175px;
   }
 }
 @media (max-width: 675px) {

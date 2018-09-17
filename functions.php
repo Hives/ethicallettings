@@ -131,7 +131,7 @@ function ethicallettings_scripts() {
 	}
 
 	// Load Raleway from Google fonts.
-	wp_enqueue_style( "Raleway", "https://fonts.googleapis.com/css?family=Raleway:300,300i,500,500i,700,700i", $media = 'all' );
+	wp_enqueue_style( "Raleway", "https://fonts.googleapis.com/css?family=Raleway:300,300i,500,500i,700,700i&subset=all", $media = 'all' );
 	
 }
 add_action( 'wp_enqueue_scripts', 'ethicallettings_scripts' );
