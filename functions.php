@@ -129,9 +129,6 @@ function ethicallettings_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
-	// Load Raleway from Google fonts.
-	wp_enqueue_style( "Raleway", "https://fonts.googleapis.com/css?family=Raleway:300,300i,500,500i,700,700i&subset=all", $media = 'all' );
 	
 }
 add_action( 'wp_enqueue_scripts', 'ethicallettings_scripts' );
@@ -161,4 +158,144 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
+}
+
+/**
+ * Quotation meta box
+ */
+
+// Fires meta box setup on post editor screen
+add_action( 'load-post.php', 'el_quotation_meta_box_setup' );
+add_action( 'load-post-new.php', 'el_quotation_meta_box_setup' );
+
+// Meta box setup function
+function el_quotation_meta_box_setup() {
+
+	// Add meta boxes ln the 'add_meta_boxes hook'
+	add_action( 'add_meta_boxes', 'el_add_post_meta_boxes' );
+}
+
+// Create meta boxes to be displayed on the editor screen
+function el_add_post_meta_boxes() {
+
+	add_meta_box(
+		'el-quotation-meta-box', // Unique ID
+		'Quotation', // Title
+		'el_quotation_meta_box', // Callback function
+		'page', // Admin page (or post type)
+		'advanced', // Context, one of normal, advanced, side
+		'default' // Priority
+	);
+}
+
+// Display the post meta box
+function el_quotation_meta_box( $post ) {
+
+	wp_nonce_field( basename( __FILE__ ), 'el_quotation_nonce' );
+	$el_stored_meta = get_post_meta( $post->ID ) ?>
+
+	<p>
+		<label for="el-quotation">Put a quotation in here (Don't include quotation marks!!)</label>
+		<br>
+		<input
+			type="text" name="el-quotation" class="widefat" id="el-quotation"
+			value="<?php if ( isset ( $el_stored_meta['el-quotation'] ) ) echo $el_stored_meta['el-quotation'][0]; ?>"
+			size="30" / >
+    </p>
+	</p>
+	<p>
+		<label for="el-quotation-name">Put the person&rsquo;s name in here as you want it to appear (e.g.: Olivia, tenant)</label>
+		<br>
+		<input
+			type="text" name="el-quotation-name" class="widefat" id="el-quotation-name"
+			value="<?php if ( isset ( $el_stored_meta['el-quotation-name'] ) ) echo $el_stored_meta['el-quotation-name'][0]; ?>"
+			size="30" / >
+	</p>
+
+<?php }
+
+// Saves the meta input
+function el_meta_save( $post_id ) {
+ 
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'el_quotation_nonce' ] ) && wp_verify_nonce( $_POST[ 'el_quotation_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+ 
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return;
+    }
+ 
+    // Checks for input and sanitizes/saves if needed
+    if( isset( $_POST[ 'el-quotation' ] ) ) {
+        update_post_meta( $post_id, 'el-quotation', sanitize_text_field( $_POST[ 'el-quotation' ] ) );
+    }
+    if( isset( $_POST[ 'el-quotation-name' ] ) ) {
+        update_post_meta( $post_id, 'el-quotation-name', sanitize_text_field( $_POST[ 'el-quotation-name' ] ) );
+    }
+ 
+}
+add_action( 'save_post', 'el_meta_save' );
+
+
+/**
+ * Quotation display widget
+ */
+
+add_action( 'widgets_init', 'el_quotation_widget_init' );
+ 
+function el_quotation_widget_init() {
+    register_widget( 'el_quotation_widget' );
+}
+ 
+class el_quotation_widget extends WP_Widget
+{
+ 
+    public function __construct()
+    {
+        $widget_details = array(
+            'classname' => 'el_quotation_widget',
+            'description' => 'Displays a quotation in the sidebar.'
+        );
+ 
+        parent::__construct( 'el_quotation_widget', 'Ethical Lettings quotes', $widget_details );
+ 
+    }
+ 
+    public function form( $instance ) {
+        echo "<p>There are no options here. To edit a quotation, edit the page on which it appears.</p>";
+    }
+ 
+    public function update( $new_instance, $old_instance ) {  
+        return $new_instance;
+    }
+ 
+    public function widget( $args, $instance ) {
+		// Retrieves the stored value from the database
+		$quotation = get_post_meta( get_the_ID(), 'el-quotation', true );
+		$name = get_post_meta( get_the_ID(), 'el-quotation-name', true );
+
+		// Checks and displays the retrieved value
+		if( !empty( $meta_value ) ) {
+		    echo $meta_value;
+		}
+
+		if ( !empty( $quotation ) && !empty( $name ) ): ?>
+			<section id="quotation">
+				<p id="quotation-text">&ldquo;<?php echo $quotation; ?>&rdquo;</p>
+				<p id="who-said-it"><?php echo $name; ?></p>			
+			</section>
+		<?php else: ?>
+			<section id="quotation">
+				<p id="quotation-text">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.&rdquo;</p>
+				<p id="who-said-it">Joe Bloggs, tenant</p>
+			</section>
+		<?php endif;
+
+    }
+ 
 }

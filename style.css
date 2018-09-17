@@ -853,39 +853,40 @@ a:hover, a:active {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 1.5em;
-  border-bottom: 4px solid #00b6e4;
   /* Make sure select elements fit in widgets. */
 }
 .widget select {
   max-width: 100%;
 }
-.widget .textwidget {
-  font-weight: 300;
+
+#quotation {
   font-style: italic;
   font-size: 1.65rem;
   line-height: 1.25;
 }
-.widget .textwidget p {
+
+#quotation-text {
+  font-weight: 300;
   margin: 0 0 0.5em 0;
 }
-.widget .textwidget p::after {
-  display: block;
-  content: "Olivia, tenant";
+
+#who-said-it {
   color: #00b6e4;
   font-weight: 700;
-  margin-top: 20px;
   font-size: 0.85em;
+  margin-top: 20px;
+  padding-bottom: 0.5em;
+  border-bottom: 4px solid #00b6e4;
 }
 
 @media (max-width: 950px) {
-  .widget .textwidget {
+  #quotation {
     font-size: 1.4rem;
     line-height: 1.25;
   }
 }
 @media (max-width: 750px) {
-  .widget .textwidget {
+  #quotation {
     font-size: 1.65rem;
     line-height: 1.25;
   }
