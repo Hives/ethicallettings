@@ -177,7 +177,7 @@ $header_padding: 28px;
         background-position: center;
 
         width: 128px;
-        height: 69px;
+        height: 71px;
         
         text-indent: -9999px;
         float: left;
@@ -304,6 +304,14 @@ $header_padding: 28px;
         .contact-details.left {
                 padding-right: 0;
                 margin-bottom: 20px;
+        }
+        .social {
+                a {
+                        margin-right: 10px;
+                }
+                br {
+                        display: none;
+                }
         }
 }
  

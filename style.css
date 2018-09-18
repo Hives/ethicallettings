@@ -44,6 +44,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 --------------------------------------------------------------*/
 /* PM */
+/* PM */
+/* PM */
 @import 'fonts/rawline/rawline.css';
 /*--------------------------------------------------------------
 # Normalize
@@ -604,10 +606,10 @@ a {
   color: #00b6e4;
 }
 a:visited {
-  color: purple;
+  color: #087797;
 }
 a:hover, a:focus, a:active {
-  color: midnightblue;
+  color: #89Ab2D;
 }
 a:focus {
   outline: thin dotted;
@@ -1092,7 +1094,7 @@ object {
   background-size: cover;
   background-position: center;
   width: 128px;
-  height: 69px;
+  height: 71px;
   text-indent: -9999px;
   float: left;
   margin: 0 -144px 4px 0;
@@ -1209,6 +1211,13 @@ object {
   .contact-details.left {
     padding-right: 0;
     margin-bottom: 20px;
+  }
+
+  .social a {
+    margin-right: 10px;
+  }
+  .social br {
+    display: none;
   }
 }
 /*--------------------------------------------------------------
