@@ -141,6 +141,9 @@ $header_padding: 28px;
                 color: $el_green;
 
                 margin-right: 55px;
+
+                font-size: 1.4rem;
+                font-weight: 800;
         }
 
 }
@@ -153,7 +156,6 @@ $header_padding: 28px;
 
 @media screen and (max-width: $bp_med) {
         .site-header .phone-number {
-                font-size: 1.4rem;
                 bottom: auto;
                 top: $header_padding;
         }

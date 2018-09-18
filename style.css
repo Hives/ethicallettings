@@ -1065,6 +1065,8 @@ object {
   font-weight: bold;
   color: #89Ab2D;
   margin-right: 55px;
+  font-size: 1.4rem;
+  font-weight: 800;
 }
 
 @media screen and (max-width: 950px) {
@@ -1074,7 +1076,6 @@ object {
 }
 @media screen and (max-width: 750px) {
   .site-header .phone-number {
-    font-size: 1.4rem;
     bottom: auto;
     top: 28px;
   }
