@@ -861,18 +861,18 @@ a:hover, a:active {
   max-width: 100%;
 }
 
-#quotation {
+.quotation {
   font-style: italic;
   font-size: 1.65rem;
   line-height: 1.25;
 }
 
-#quotation-text {
+.quotation-text {
   font-weight: 300;
   margin: 0 0 0.5em 0;
 }
 
-#who-said-it {
+.who-said-it {
   color: #00b6e4;
   font-weight: 700;
   font-size: 0.85em;
@@ -882,13 +882,13 @@ a:hover, a:active {
 }
 
 @media (max-width: 950px) {
-  #quotation {
+  .quotation {
     font-size: 1.4rem;
     line-height: 1.25;
   }
 }
 @media (max-width: 750px) {
-  #quotation {
+  .quotation {
     font-size: 1.65rem;
     line-height: 1.25;
   }

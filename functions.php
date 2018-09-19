@@ -180,7 +180,7 @@ function el_add_post_meta_boxes() {
 
 	add_meta_box(
 		'el-quotation-meta-box', // Unique ID
-		'Quotation', // Title
+		'Quotations', // Title
 		'el_quotation_meta_box', // Callback function
 		'page', // Admin page (or post type)
 		'advanced', // Context, one of normal, advanced, side
@@ -194,23 +194,30 @@ function el_quotation_meta_box( $post ) {
 	wp_nonce_field( basename( __FILE__ ), 'el_quotation_nonce' );
 	$el_stored_meta = get_post_meta( $post->ID ) ?>
 
-	<p>
-		<label for="el-quotation">Put a quotation in here (Don't include quotation marks!!)</label>
-		<br>
-		<input
-			type="text" name="el-quotation" class="widefat" id="el-quotation"
-			value="<?php if ( isset ( $el_stored_meta['el-quotation'] ) ) echo $el_stored_meta['el-quotation'][0]; ?>"
-			size="30" / >
-    </p>
-	</p>
-	<p>
-		<label for="el-quotation-name">Put the person&rsquo;s name in here as you want it to appear (e.g.: Olivia, tenant)</label>
-		<br>
-		<input
-			type="text" name="el-quotation-name" class="widefat" id="el-quotation-name"
-			value="<?php if ( isset ( $el_stored_meta['el-quotation-name'] ) ) echo $el_stored_meta['el-quotation-name'][0]; ?>"
-			size="30" / >
-	</p>
+	<p>You can enter up to 3 quotations to appear on this page.</p>
+
+	<?php for ($i=0; $i < 3; $i++): ?>
+
+		<h3>Quotation <?php echo ($i + 1); ?></h3>
+		<p>
+			<label for="el-quotation-<?php echo $i; ?>">The quotation (Don't include quotation marks)</label>
+			<br>
+			<input
+				type="text" name="el-quotation-<?php echo $i; ?>" class="widefat" id="el-quotation-<?php echo $i; ?>"
+				value="<?php if ( isset ( $el_stored_meta['el-quotation-' . $i] ) ) echo $el_stored_meta['el-quotation-' . $i][0]; ?>"
+				size="30" / >
+	    </p>
+		</p>
+		<p>
+			<label for="el-quotation-<?php echo $i; ?>-name">The name of the quotee, as you want it to appear (e.g.: Olivia, tenant)</label>
+			<br>
+			<input
+				type="text" name="el-quotation-<?php echo $i; ?>-name" class="widefat" id="el-quotation-<?php echo $i; ?>-name"
+				value="<?php if ( isset ( $el_stored_meta['el-quotation-' . $i . '-name'] ) ) echo $el_stored_meta['el-quotation-' . $i . '-name'][0]; ?>"
+				size="30" / >
+		</p>
+
+	<?php endfor; ?>
 
 <?php }
 
@@ -226,15 +233,19 @@ function el_meta_save( $post_id ) {
     if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
         return;
     }
+
+	for ($i=0; $i < 3; $i++) {
  
-    // Checks for input and sanitizes/saves if needed
-    if( isset( $_POST[ 'el-quotation' ] ) ) {
-        update_post_meta( $post_id, 'el-quotation', sanitize_text_field( $_POST[ 'el-quotation' ] ) );
-    }
-    if( isset( $_POST[ 'el-quotation-name' ] ) ) {
-        update_post_meta( $post_id, 'el-quotation-name', sanitize_text_field( $_POST[ 'el-quotation-name' ] ) );
-    }
- 
+ 	    // Checks for input and sanitizes/saves if needed
+	    if( isset( $_POST[ 'el-quotation-' . $i ] ) ) {
+	        update_post_meta( $post_id, 'el-quotation-' . $i, sanitize_text_field( $_POST[ 'el-quotation-' . $i ] ) );
+	    }
+	    if( isset( $_POST[ 'el-quotation-' . $i . '-name' ] ) ) {
+	        update_post_meta( $post_id, 'el-quotation-' . $i . '-name', sanitize_text_field( $_POST[ 'el-quotation-' . $i . '-name' ] ) );
+	    }
+
+	}
+
 }
 add_action( 'save_post', 'el_meta_save' );
 
@@ -273,28 +284,24 @@ class el_quotation_widget extends WP_Widget
  
     public function widget( $args, $instance ) {
 		// Retrieves the stored value from the database
-		$quotation = get_post_meta( get_the_ID(), 'el-quotation', true );
-		$name = get_post_meta( get_the_ID(), 'el-quotation-name', true );
+		
+		$quotation = array();
+		$name = array();
+    	for ($i=0; $i < 3; $i++) { 
+			$quotation[$i] = get_post_meta( get_the_ID(), 'el-quotation-' . $i, true );
+			$name[$i] = get_post_meta( get_the_ID(), 'el-quotation-' . $i . '-name', true );
+    	}
 
 		// Checks and displays the retrieved value
-		if( !empty( $meta_value ) ) {
-		    echo $meta_value;
-		}
 
-		if ( !empty( $quotation ) && !empty( $name ) ): ?>
-			<section id="quotation">
-				<p id="quotation-text">&ldquo;<?php echo $quotation; ?>&rdquo;</p>
-				<p id="who-said-it"><?php echo $name; ?></p>			
-			</section>
-		<?php else: ?>
-			<section id="quotation">
-				<p id="quotation-text">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat.&rdquo;</p>
-				<p id="who-said-it">Joe Bloggs, tenant</p>
-			</section>
-		<?php endif;
+    	for ($i=0; $i < 3; $i++) { 
+			if ( !empty( $quotation[$i] ) && !empty( $name[$i] ) ) { ?>
+				<section class="quotation">
+					<p class="quotation-text">&ldquo;<?php echo $quotation[$i]; ?>&rdquo;</p>
+					<p class="who-said-it"><?php echo $name[$i]; ?></p>			
+				</section>
+			<?php }
+    	}
 
     }
  
