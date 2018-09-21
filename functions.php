@@ -306,3 +306,37 @@ class el_quotation_widget extends WP_Widget
     }
  
 }
+
+
+/**
+ * column shortcode
+ */
+
+function new_column_shortcode( $atts ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'pos' => 'left',
+		),
+		$atts,
+		'new_column'
+	);
+
+	$classes = array('shortcode-column');
+	$classes[] = "shortcode-column-" . $atts['pos'];
+	if ($atts['pos'] == 'right') {
+		$classes[] = "shortcode-column-clear-after";
+	}
+	// Return custom embed code
+	return '<div class="' . implode(" ", $classes) . '">';
+
+}
+function end_column_shortcode( $atts ) {
+
+	// Return custom embed code
+	return '</div>';
+
+}
+add_shortcode( 'new_column', 'new_column_shortcode' );
+add_shortcode( 'end_column', 'end_column_shortcode' );

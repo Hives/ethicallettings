@@ -1327,6 +1327,28 @@ hr {
 }
 
 /*--------------------------------------------------------------
+# Styling for columns shortcode
+--------------------------------------------------------------*/
+.shortcode-column {
+  width: 50%;
+  display: inline-block;
+}
+
+.shortcode-column-left {
+  padding-right: 15px;
+}
+
+.shortcode-column-right {
+  padding-left: 15px;
+  float: right;
+}
+.shortcode-column-right:after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+
+/*--------------------------------------------------------------
 # Test version warning
 --------------------------------------------------------------*/
 #test-server-warning {

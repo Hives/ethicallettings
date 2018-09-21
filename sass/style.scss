@@ -441,6 +441,36 @@ hr {
 }
 
 /*--------------------------------------------------------------
+# Styling for columns shortcode
+--------------------------------------------------------------*/
+
+.shortcode-column {
+        width: 50%;
+        display: inline-block;
+}
+
+.shortcode-column-left {
+        padding-right: 15px;
+}
+
+.shortcode-column-right {
+        padding-left: 15px;
+        float: right;
+
+        &:after {
+                @include clearfix
+
+        }
+}
+
+// .shortcode-column-clear-after:after {
+//         content: " ";
+//         display: table;
+//         clear: both;
+// }
+
+
+/*--------------------------------------------------------------
 # Test version warning
 --------------------------------------------------------------*/
 
