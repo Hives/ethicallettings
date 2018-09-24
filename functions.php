@@ -311,8 +311,12 @@ class el_quotation_widget extends WP_Widget
 /**
  * column shortcode
  */
+function column_row_shortcode( $atts, $content = null ) {
+	return '<div class="shortcode-column-container clear">' . do_shortcode($content) . '</div>';
+}
+add_shortcode( 'row', 'column_row_shortcode' );
 
-function new_column_shortcode( $atts ) {
+function column_shortcode( $atts, $content = null ) {
 
 	// Attributes
 	$atts = shortcode_atts(
@@ -320,23 +324,11 @@ function new_column_shortcode( $atts ) {
 			'pos' => 'left',
 		),
 		$atts,
-		'new_column'
+		'column'
 	);
-
 	$classes = array('shortcode-column');
 	$classes[] = "shortcode-column-" . $atts['pos'];
-	if ($atts['pos'] == 'right') {
-		$classes[] = "shortcode-column-clear-after";
-	}
-	// Return custom embed code
-	return '<div class="' . implode(" ", $classes) . '">';
 
+	return '<div class="' . implode(" ", $classes) . '"">' . do_shortcode($content) . '</div>';	
 }
-function end_column_shortcode( $atts ) {
-
-	// Return custom embed code
-	return '</div>';
-
-}
-add_shortcode( 'new_column', 'new_column_shortcode' );
-add_shortcode( 'end_column', 'end_column_shortcode' );
+add_shortcode( 'column', 'column_shortcode' );
