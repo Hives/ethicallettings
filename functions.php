@@ -311,12 +311,12 @@ class el_quotation_widget extends WP_Widget
 /**
  * column shortcode
  */
-function column_row_shortcode( $atts, $content = null ) {
+function el_column_row_shortcode( $atts, $content = null ) {
 	return '<div class="shortcode-column-container clear">' . do_shortcode($content) . '</div>';
 }
-add_shortcode( 'row', 'column_row_shortcode' );
+add_shortcode( 'row', 'el_column_row_shortcode' );
 
-function column_shortcode( $atts, $content = null ) {
+function el_column_shortcode( $atts, $content = null ) {
 
 	// Attributes
 	$atts = shortcode_atts(
@@ -331,4 +331,12 @@ function column_shortcode( $atts, $content = null ) {
 
 	return '<div class="' . implode(" ", $classes) . '"">' . do_shortcode($content) . '</div>';	
 }
-add_shortcode( 'column', 'column_shortcode' );
+add_shortcode( 'column', 'el_column_shortcode' );
+
+/**
+ * location map shortcode
+ */
+function el_location_map_shortcode( $atts, $content = null ) {
+	return '<img src="' . get_stylesheet_directory_uri() . '/images/ethical-lettings-map.png" alt="Mapp">';
+}
+add_shortcode( 'location_map', 'el_location_map_shortcode' );

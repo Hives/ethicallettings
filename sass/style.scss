@@ -316,6 +316,37 @@ $header_padding: 28px;
                 }
         }
 }
+
+// sticky footer
+html, body {
+        height: 100%;
+}
+// #page {
+//          display: flex;
+//          flex-direction: column;
+// }
+// #content {
+//          flex: 1 0 auto;
+// }
+// #colophon {
+//          flex-shrink: 0;
+// }
+body {
+        display: flex;
+        flex-direction: column;
+}
+#page {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+}
+#content {
+        flex: 1 0 auto;
+}
+#colophon {
+        flex-shrink: 0;
+}
+
  
 /*--------------------------------------------------------------
 # Flekthi layout
@@ -444,6 +475,15 @@ hr {
 # Styling for columns shortcode
 --------------------------------------------------------------*/
 
+form.contact-form textarea {
+        width: 95%;
+        max-width: 500px;
+}
+
+/*--------------------------------------------------------------
+# Styling for columns shortcode
+--------------------------------------------------------------*/
+
 .shortcode-column {
         width: 50%;
         display: inline-block;
@@ -461,6 +501,22 @@ hr {
 .shortcode-column-right {
         padding-left: 15px;
 }       
+
+/*--------------------------------------------------------------
+# Styling for wp block shortcode
+--------------------------------------------------------------*/
+
+$wp-block-margin: 30px;
+
+.wp-block-column {
+        margin-left: $wp-block-margin/2;
+        margin-right: $wp-block-margin/2;
+}
+
+.wp-block-columns {
+        margin-left: -$wp-block-margin/2;
+        margin-right: -$wp-block-margin/2;
+}
 
 /*--------------------------------------------------------------
 # Test version warning

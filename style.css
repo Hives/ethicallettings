@@ -512,7 +512,11 @@ figure {
 
 table {
   margin: 0 0 1.5em;
-  width: 100%;
+  border-spacing: 0;
+}
+
+td {
+  padding-right: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -1221,6 +1225,29 @@ object {
     display: none;
   }
 }
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#page {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  flex: 1 0 auto;
+}
+
+#colophon {
+  flex-shrink: 0;
+}
+
 /*--------------------------------------------------------------
 # Flekthi layout
 --------------------------------------------------------------*/
@@ -1329,6 +1356,14 @@ hr {
 /*--------------------------------------------------------------
 # Styling for columns shortcode
 --------------------------------------------------------------*/
+form.contact-form textarea {
+  width: 95%;
+  max-width: 500px;
+}
+
+/*--------------------------------------------------------------
+# Styling for columns shortcode
+--------------------------------------------------------------*/
 .shortcode-column {
   width: 50%;
   display: inline-block;
@@ -1345,6 +1380,19 @@ hr {
 
 .shortcode-column-right {
   padding-left: 15px;
+}
+
+/*--------------------------------------------------------------
+# Styling for wp block shortcode
+--------------------------------------------------------------*/
+.wp-block-column {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.wp-block-columns {
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 /*--------------------------------------------------------------
