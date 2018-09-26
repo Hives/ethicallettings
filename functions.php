@@ -295,10 +295,12 @@ class el_quotation_widget extends WP_Widget
 		// Checks and displays the retrieved value
 
     	for ($i=0; $i < 3; $i++) { 
-			if ( !empty( $quotation[$i] ) && !empty( $name[$i] ) ) { ?>
+			if ( !empty( $quotation[$i] ) ) { ?>
 				<section class="quotation">
 					<p class="quotation-text">&ldquo;<?php echo $quotation[$i]; ?>&rdquo;</p>
-					<p class="who-said-it"><?php echo $name[$i]; ?></p>			
+					<?php if ( !empty( $name[$i] ) ) { ?>
+						<p class="who-said-it"><?php echo $name[$i]; ?></p>
+					<?php } ?>
 				</section>
 			<?php }
     	}
@@ -332,6 +334,30 @@ function el_column_shortcode( $atts, $content = null ) {
 	return '<div class="' . implode(" ", $classes) . '"">' . do_shortcode($content) . '</div>';	
 }
 add_shortcode( 'column', 'el_column_shortcode' );
+
+// this is here to stop wpautop messing up tags around the column shortcode.
+// see here: https://sww.nz/solution-to-wordpress-adding-br-and-p-tags-around-shortcodes/
+// i didn't need to do the second part though for some reason
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 12);
+
+/**
+ * homepage box shortcode
+ */
+function el_homepage_box_shortcode( $atts, $content = null ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'colour' => 'blue',
+		),
+		$atts
+	);
+
+	return '<div class="homepage-box homepage-box-' . $atts['colour'] . '""><div class="homepage-box-content">' . do_shortcode($content) . '</div></div>';	
+}
+add_shortcode( 'homepage_box', 'el_homepage_box_shortcode' );
+
 
 /**
  * location map shortcode

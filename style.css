@@ -869,6 +869,8 @@ a:hover, a:active {
   font-style: italic;
   font-size: 1.65rem;
   line-height: 1.25;
+  border-bottom: 4px solid #00b6e4;
+  margin-bottom: 50px;
 }
 
 .quotation-text {
@@ -881,8 +883,7 @@ a:hover, a:active {
   font-weight: 700;
   font-size: 0.85em;
   margin-top: 20px;
-  padding-bottom: 0.5em;
-  border-bottom: 4px solid #00b6e4;
+  margin-bottom: 0.5em;
 }
 
 @media (max-width: 950px) {
@@ -1354,7 +1355,7 @@ hr {
 }
 
 /*--------------------------------------------------------------
-# Styling for columns shortcode
+# Styling for contact form
 --------------------------------------------------------------*/
 form.contact-form textarea {
   width: 95%;
@@ -1364,22 +1365,58 @@ form.contact-form textarea {
 /*--------------------------------------------------------------
 # Styling for columns shortcode
 --------------------------------------------------------------*/
+.shortcode-column-container {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
 .shortcode-column {
   width: 50%;
   display: inline-block;
   float: left;
-}
-
-.short-column::first {
-  background-colour: pink;
-}
-
-.shortcode-column-left {
+  padding-left: 15px;
   padding-right: 15px;
 }
 
-.shortcode-column-right {
-  padding-left: 15px;
+/*--------------------------------------------------------------
+# Styling for homepage box shortcode
+--------------------------------------------------------------*/
+.homepage-box {
+  padding-left: 20%;
+  margin-bottom: 30px;
+}
+
+.homepage-box-content {
+  padding: 15px;
+}
+.homepage-box-content * {
+  color: white;
+}
+.homepage-box-content a {
+  color: white;
+}
+.homepage-box-content h1, .homepage-box-content h2, .homepage-box-content h3, .homepage-box-content h4, .homepage-box-content h5, .homepage-box-content h6 {
+  margin: 0;
+  margin-bottom: 0.2em;
+}
+.homepage-box-content p {
+  font-size: 130%;
+  margin: 0;
+  margin-bottom: 0.4em;
+}
+
+.shortcode-column-container .homepage-box-content p {
+  font-size: 100%;
+}
+
+.homepage-box-blue {
+  background-color: #00b6e4;
+  border-top: 3px solid #89Ab2D;
+}
+
+.homepage-box-green {
+  background-color: #89Ab2D;
+  border-top: 3px solid #00b6e4;
 }
 
 /*--------------------------------------------------------------

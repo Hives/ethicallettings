@@ -13,6 +13,10 @@
 
 	font-size: 1.65rem;
 	line-height: 1.25;
+
+	// padding-bottom: 0.5em;
+	border-bottom: 4px solid $el_blue;
+	margin-bottom: 50px;
 }
 
 .quotation-text {
@@ -26,8 +30,7 @@
 	font-size: 0.85em;
 
 	margin-top: 20px;
-	padding-bottom: 0.5em;
-	border-bottom: 4px solid $el_blue;
+	margin-bottom: 0.5em;
 }
 
 @media (max-width: $bp_large) {
