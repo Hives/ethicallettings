@@ -13,6 +13,14 @@
 
 	</div><!-- #content -->
 
+	<?php if (is_front_page()) { ?>
+		<div class="prs full-width">
+			<p>Proud members of:</p>
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/prs-logo.png" alt="The ethical lettings logo" />		
+		</div>
+	<?php } ?>
+
+
 	<footer id="colophon">
 		<div class="site-footer full-width">
 
@@ -37,7 +45,6 @@
 					<a href="https://www.facebook.com/ethicallettings" title=""><i class="fab fa-facebook-square"></i></a><br>
 					<a href="https://www.linkedin.com/company/ethical-lettings" title=""><i class="fab fa-linkedin"></i></a>
 				</div>
-				<img class="prs-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/prs-logo.png" alt="The ethical lettings logo" />
 			</div>
 
 		</div>

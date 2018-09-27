@@ -400,6 +400,7 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
   color: #89Ab2D;
   font-weight: bold;
+  line-height: 1.2;
 }
 
 p {
@@ -1197,23 +1198,19 @@ object {
   color: #89Ab2D;
 }
 
-.prs-logo {
-  width: 190px;
-  position: absolute;
-  bottom: 0;
+.prs {
+  margin-bottom: 40px;
+  font-size: 0.9rem;
+}
+.prs p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.prs img {
+  width: 180px;
 }
 
-@media (max-width: 950px) {
-  .prs-logo {
-    width: 175px;
-  }
-}
 @media (max-width: 675px) {
-  .prs-logo {
-    position: relative;
-    margin: 10px 0 20px;
-  }
-
   .contact-details.left {
     padding-right: 0;
     margin-bottom: 20px;
@@ -1394,6 +1391,9 @@ form.contact-form textarea {
 }
 .homepage-box-content a {
   color: white;
+}
+.homepage-box-content a:hover {
+  text-decoration: none;
 }
 .homepage-box-content h1, .homepage-box-content h2, .homepage-box-content h3, .homepage-box-content h4, .homepage-box-content h5, .homepage-box-content h6 {
   margin: 0;
