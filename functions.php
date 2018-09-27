@@ -161,9 +161,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Quotation meta box
+ * Paul's metaboxes.
+ *
+ * @link https://developer.wordpress.org/plugins/metadata/custom-meta-boxes/
  */
 
+/**
+ * Quotation meta box
+ */
+ 
 // Fires meta box setup on post editor screen
 add_action( 'load-post.php', 'el_quotation_meta_box_setup' );
 add_action( 'load-post-new.php', 'el_quotation_meta_box_setup' );
@@ -249,7 +255,6 @@ function el_meta_save( $post_id ) {
 }
 add_action( 'save_post', 'el_meta_save' );
 
-
 /**
  * Quotation display widget
  */
@@ -309,15 +314,29 @@ class el_quotation_widget extends WP_Widget
  
 }
 
+/**
+ * Paul's shortcodes.
+ *
+ * @link https://codex.wordpress.org/Shortcode_API
+ */
+
+// this is here to stop wpautop messing up tags around the shortcode.
+// see here: https://sww.nz/solution-to-wordpress-adding-br-and-p-tags-around-shortcodes/
+// i didn't need to do the second part though for some reason
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 12);
 
 /**
- * column shortcode
+ * row of columns shortcode
  */
 function el_column_row_shortcode( $atts, $content = null ) {
 	return '<div class="shortcode-column-container clear">' . do_shortcode($content) . '</div>';
 }
 add_shortcode( 'row', 'el_column_row_shortcode' );
 
+/**
+ * column shortcode
+ */
 function el_column_shortcode( $atts, $content = null ) {
 
 	// Attributes
@@ -334,12 +353,6 @@ function el_column_shortcode( $atts, $content = null ) {
 	return '<div class="' . implode(" ", $classes) . '"">' . do_shortcode($content) . '</div>';	
 }
 add_shortcode( 'column', 'el_column_shortcode' );
-
-// this is here to stop wpautop messing up tags around the column shortcode.
-// see here: https://sww.nz/solution-to-wordpress-adding-br-and-p-tags-around-shortcodes/
-// i didn't need to do the second part though for some reason
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop' , 12);
 
 /**
  * homepage box shortcode
