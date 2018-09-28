@@ -487,9 +487,31 @@ hr {
 # Styling for contact form
 --------------------------------------------------------------*/
 
-form.contact-form textarea {
-        width: 95%;
-        max-width: 500px;
+form.contact-form {
+        label {
+                font-size: 0.9rem;
+                font-weight: normal;
+        }
+        div > br {
+                display: none;
+        }
+        textarea, input[type='text'], input[type='email'], input[type='url'] {
+                width: 95%;
+                max-width: 500px;                
+        }
+
+        input[type='submit'] {
+                font-size: 1rem;
+                border: none;
+                background-color: $el_blue;
+                border-radius: 0;
+                color: $el_white;
+                padding: 0.6em 1em;
+                &:hover {
+                        background-color: $el_green;
+                        cursor: pointer;
+                }
+        }
 }
 
 /*--------------------------------------------------------------
@@ -510,6 +532,13 @@ $column-margin: 30px;
         padding-left: $column-margin/2;
         padding-right: $column-margin/2;
 }
+
+@media (max-width: $bp_med) {
+        .shortcode-column {
+                width: 100%;
+        }
+}
+
 
 /*--------------------------------------------------------------
 # Styling for homepage box shortcode
@@ -562,6 +591,17 @@ $column-margin: 30px;
         .homepage-box-content {
                 p {
                         font-size: 90%;
+                }
+        }
+}
+
+@media (max-width: $bp_med) {
+        .shortcode-column-container{
+                .homepage-box {
+                        padding-left: 20%;
+                }
+                .homepage-box-image {
+                        width: 20%;
                 }
         }
 }
