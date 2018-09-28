@@ -665,10 +665,6 @@ $column-margin: 30px;
         flex-direction: column;
         padding: 15px;
 
-        > * {
-                width: 100%;
-        }
-
         > p {
                 flex-grow: 1;
         }
@@ -694,6 +690,9 @@ $column-margin: 30px;
         }
 }
 
+.ie .homepage-box-content {
+        display: block;
+}
 .homepage-box-image {
         flex: none;
         width: 20%;
