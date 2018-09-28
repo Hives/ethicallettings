@@ -363,11 +363,19 @@ function el_homepage_box_shortcode( $atts, $content = null ) {
 	$atts = shortcode_atts(
 		array(
 			'colour' => 'blue',
+			'img' => false,
 		),
 		$atts
 	);
 
-	return '<div class="homepage-box homepage-box-' . $atts['colour'] . '""><div class="homepage-box-content">' . do_shortcode($content) . '</div></div>';	
+	if ($atts['img']) {
+		$img_url = wp_get_attachment_image_src( $atts['img'] )[0]; //"http://ethicallettings.test/wp-content/themes/ethicallettings/images/prs-logo.png";
+	} else {
+		$img_url = get_stylesheet_directory_uri() . "/images/homepage-box-blank-image.png";
+	}
+
+	return '<div class="homepage-box homepage-box-' . $atts['colour'] . '""><div class="homepage-box-image" style="background-image: url(' . $img_url . ')"></div><div class="homepage-box-content">' . do_shortcode($content) . '</div></div>';
+
 }
 add_shortcode( 'homepage_box', 'el_homepage_box_shortcode' );
 

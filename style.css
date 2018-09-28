@@ -1381,6 +1381,7 @@ form.contact-form textarea {
 .homepage-box {
   padding-left: 20%;
   margin-bottom: 30px;
+  position: relative;
 }
 
 .homepage-box-content {
@@ -1405,6 +1406,21 @@ form.contact-form textarea {
   margin-bottom: 0.4em;
 }
 
+.homepage-box-image {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 20%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.shortcode-column-container .homepage-box {
+  padding-left: 30%;
+}
+.shortcode-column-container .homepage-box-image {
+  width: 30%;
+}
 .shortcode-column-container .homepage-box-content p {
   font-size: 100%;
 }

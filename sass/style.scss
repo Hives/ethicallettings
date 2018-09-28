@@ -517,7 +517,8 @@ $column-margin: 30px;
 
 .homepage-box {
         padding-left: 20%;
-        margin-bottom: $column-margin
+        margin-bottom: $column-margin;
+        position: relative;
 }
 
 .homepage-box-content {
@@ -542,11 +543,28 @@ $column-margin: 30px;
         padding: 15px;
 }
 
-.shortcode-column-container .homepage-box-content {
+.homepage-box-image {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 20%;
+        background-size: cover;
+        background-position: center center;
+}
+
+.shortcode-column-container{
+        .homepage-box {
+                padding-left: 30%;
+        }
+        .homepage-box-image {
+                width: 30%;
+        }
+        .homepage-box-content {
                 p {
                         font-size: 100%;
                 }
         }
+}
 
 .homepage-box-blue {
         background-color: $el_blue;
