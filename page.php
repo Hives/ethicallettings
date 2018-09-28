@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area wrapper">
+	<div id="primary" class="content-area wrapper page-template">
 		<main id="main" class="site-main left">
 
 		<?php

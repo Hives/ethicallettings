@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area wrapper">
+	<div id="primary" class="content-area wrapper full-width-template">
 		<main id="main" class="site-main">
 
 		<?php

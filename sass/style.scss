@@ -489,7 +489,7 @@ hr {
 
 form.contact-form {
         label {
-                font-size: 0.9rem;
+                font-size: 0.87rem;
                 font-weight: normal;
         }
         div > br {
@@ -520,22 +520,65 @@ form.contact-form {
 
 $column-margin: 30px;
 
+// .shortcode-column-container {
+//         margin-left: -$column-margin/2;
+//         margin-right: -$column-margin/2;
+// }
+
+// .shortcode-column {
+//         width: 50%;
+//         height: 100%;
+//         display: inline-block;
+//         float: left;
+//         padding-left: $column-margin/2;
+//         padding-right: $column-margin/2;
+// }
+
+// @media (max-width: $bp_med) {
+//         .shortcode-column {
+//                 width: 100%;
+//         }
+// }
+
 .shortcode-column-container {
         margin-left: -$column-margin/2;
         margin-right: -$column-margin/2;
+        display: flex;
 }
 
 .shortcode-column {
+        flex: none;
         width: 50%;
-        display: inline-block;
-        float: left;
         padding-left: $column-margin/2;
         padding-right: $column-margin/2;
 }
 
-@media (max-width: $bp_med) {
+@media (max-width: $bp_large) {
+        .shortcode-column-container {
+                display: block;
+        }
         .shortcode-column {
                 width: 100%;
+        }
+
+        .full-width-template {
+                .shortcode-column-container {
+                        display: flex;
+                }
+                .shortcode-column {
+                        width: 50%;
+                }
+        }
+}
+
+@media (max-width: $bp_med) {
+        .full-width-template {
+                .shortcode-column-container {
+                        display: block;
+                }
+                .shortcode-column {
+                        width: 100%;
+                }
         }
 }
 
@@ -544,6 +587,7 @@ $column-margin: 30px;
 # Styling for homepage box shortcode
 --------------------------------------------------------------*/
 
+/*
 .homepage-box {
         padding-left: 20%;
         margin-bottom: $column-margin;
@@ -605,6 +649,70 @@ $column-margin: 30px;
                 }
         }
 }
+*/
+
+.homepage-box {
+        height: auto;
+        display: flex;
+        margin-bottom: $column-margin;
+        * {
+                color: $el_white;
+        }
+}
+
+.homepage-box-content {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+
+        > p {
+                flex-grow: 1;
+        }
+
+        > p:last-child {
+                flex-grow: 0;
+        }
+
+        a {
+                color: white;
+                &:hover {
+                        text-decoration: none;
+                }
+        }
+        h1, h2, h3, h4, h5, h6 {
+                margin: 0;
+                margin-bottom: 0.2em;
+        }
+        p {
+                font-size: 130%;
+                margin: 0;
+                margin-bottom: 0.4em;
+        }
+}
+
+.homepage-box-image {
+        flex: none;
+        width: 20%;
+        min-width: 90px;
+        background-size: cover;
+        background-position: center center;
+}
+
+.shortcode-column-container {
+        .homepage-box {
+                height: 100%;
+                margin-bottom: 0;
+        }
+
+        .homepage-box-image {
+                width: 30%;
+        }
+        .homepage-box-content {
+                p {
+                        font-size: 0.9rem;                        
+                }
+        }
+}
 
 .homepage-box-blue {
         background-color: $el_blue;
@@ -615,6 +723,49 @@ $column-margin: 30px;
         background-color: $el_green;
         border-top: 3px solid $el_blue;
 }
+
+@media (max-width: $bp_large) {
+        .shortcode-column-container {
+                .homepage-box {
+                        margin-bottom: $column-margin;
+                }
+                .homepage-box-image {
+                        width: 20%;
+                }
+        }
+
+        .full-width-template {
+                .shortcode-column-container {
+                        .homepage-box {
+                                margin-bottom: 0;
+                        }
+                        .homepage-box-image {
+                                width: 30%;
+                        }
+                }
+        }
+}
+
+@media (max-width: $bp_med) {
+        .full-width-template {
+                .shortcode-column-container {
+                        .homepage-box {
+                                margin-bottom: $column-margin;
+                        }
+                        .homepage-box-image {
+                                width: 20%;
+                        }
+                }
+        }
+}
+
+// @media (max-width: $bp_med) {
+//         .shortcode-column-container {
+//                 .homepage-box-image {
+//                         width: 20%;
+//                 }
+//         }
+// }
 
 /*--------------------------------------------------------------
 # Styling for wp block shortcode
