@@ -665,6 +665,10 @@ $column-margin: 30px;
         flex-direction: column;
         padding: 15px;
 
+        > * {
+                width: 100%;
+        }
+
         > p {
                 flex-grow: 1;
         }

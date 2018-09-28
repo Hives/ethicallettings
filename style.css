@@ -1501,6 +1501,9 @@ form.contact-form input[type=submit]:hover {
   flex-direction: column;
   padding: 15px;
 }
+.homepage-box-content > * {
+  width: 100%;
+}
 .homepage-box-content > p {
   flex-grow: 1;
 }
