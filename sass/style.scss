@@ -684,7 +684,7 @@ $column-margin: 30px;
                 margin-bottom: 0.2em;
         }
         p {
-                font-size: 130%;
+                font-size: 120%;
                 margin: 0;
                 margin-bottom: 0.4em;
         }
@@ -759,6 +759,20 @@ $column-margin: 30px;
                                 width: 20%;
                         }
                 }
+        }
+}
+
+@media (max-width: $bp_small) {
+        .homepage-box {
+                p {
+                        font-size: inherit;
+                }
+        }
+}
+
+@media (max-width: $bp_really_small) {
+        .homepage-box-image {
+                display: none;
         }
 }
 

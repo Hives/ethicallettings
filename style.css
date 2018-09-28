@@ -1518,7 +1518,7 @@ form.contact-form input[type=submit]:hover {
   margin-bottom: 0.2em;
 }
 .homepage-box-content p {
-  font-size: 130%;
+  font-size: 120%;
   margin: 0;
   margin-bottom: 0.4em;
 }
@@ -1577,6 +1577,16 @@ form.contact-form input[type=submit]:hover {
   }
   .full-width-template .shortcode-column-container .homepage-box-image {
     width: 20%;
+  }
+}
+@media (max-width: 675px) {
+  .homepage-box p {
+    font-size: inherit;
+  }
+}
+@media (max-width: 375px) {
+  .homepage-box-image {
+    display: none;
   }
 }
 /*--------------------------------------------------------------
