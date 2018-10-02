@@ -1130,12 +1130,12 @@ object {
 }
 @media (max-width: 675px) {
   #banner-image {
-    height: 120px;
+    height: 115px;
   }
 }
 @media (max-width: 375px) {
   #banner-image {
-    height: 80px;
+    height: 90px;
   }
 }
 /*--------------------------------------------------------------
