@@ -16,7 +16,9 @@
 	<?php if (is_front_page()) { ?>
 		<div class="prs full-width">
 			<p>Proud members of:</p>
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/prs-logo.png" alt="The ethical lettings logo" />		
+			<a href="https://www.theprs.co.uk/" target="_blank" title="Property Redress Scheme website">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/prs-logo.png" alt="The ethical lettings logo" />
+			</a>
 		</div>
 	<?php } ?>
 
