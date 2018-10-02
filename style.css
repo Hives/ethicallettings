@@ -1458,7 +1458,8 @@ form.contact-form input[type=submit]:hover {
         left: 0;
         height: 100%;
         width: 20%;
-        background-size: cover;
+
+        background-size: contain;
         background-position: center center;
 }
 
@@ -1531,7 +1532,9 @@ form.contact-form input[type=submit]:hover {
   flex: none;
   width: 20%;
   min-width: 90px;
-  background-size: cover;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: contain;
   background-position: center center;
 }
 

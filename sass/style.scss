@@ -621,7 +621,8 @@ $column-margin: 30px;
         left: 0;
         height: 100%;
         width: 20%;
-        background-size: cover;
+
+        background-size: contain;
         background-position: center center;
 }
 
@@ -697,7 +698,9 @@ $column-margin: 30px;
         flex: none;
         width: 20%;
         min-width: 90px;
-        background-size: cover;
+        background-color: $el_white;
+        background-repeat: no-repeat;
+        background-size: contain;
         background-position: center center;
 }
 
