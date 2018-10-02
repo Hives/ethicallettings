@@ -520,26 +520,6 @@ form.contact-form {
 
 $column-margin: 30px;
 
-// .shortcode-column-container {
-//         margin-left: -$column-margin/2;
-//         margin-right: -$column-margin/2;
-// }
-
-// .shortcode-column {
-//         width: 50%;
-//         height: 100%;
-//         display: inline-block;
-//         float: left;
-//         padding-left: $column-margin/2;
-//         padding-right: $column-margin/2;
-// }
-
-// @media (max-width: $bp_med) {
-//         .shortcode-column {
-//                 width: 100%;
-//         }
-// }
-
 .shortcode-column-container {
         margin-left: -$column-margin/2;
         margin-right: -$column-margin/2;
@@ -586,71 +566,6 @@ $column-margin: 30px;
 /*--------------------------------------------------------------
 # Styling for homepage box shortcode
 --------------------------------------------------------------*/
-
-/*
-.homepage-box {
-        padding-left: 20%;
-        margin-bottom: $column-margin;
-        position: relative;
-}
-
-.homepage-box-content {
-        * {
-                color: white;
-        }
-        a {
-                color: white;
-                &:hover {
-                        text-decoration: none;
-                }
-        }
-        h1, h2, h3, h4, h5, h6 {
-                margin: 0;
-                margin-bottom: 0.2em;
-        }
-        p {
-                font-size: 130%;
-                margin: 0;
-                margin-bottom: 0.4em;
-        }
-        padding: 15px;
-}
-
-.homepage-box-image {
-        position: absolute;
-        left: 0;
-        height: 100%;
-        width: 20%;
-
-        background-size: contain;
-        background-position: center center;
-}
-
-.shortcode-column-container{
-        .homepage-box {
-                padding-left: 30%;
-        }
-        .homepage-box-image {
-                width: 30%;
-        }
-        .homepage-box-content {
-                p {
-                        font-size: 90%;
-                }
-        }
-}
-
-@media (max-width: $bp_med) {
-        .shortcode-column-container{
-                .homepage-box {
-                        padding-left: 20%;
-                }
-                .homepage-box-image {
-                        width: 20%;
-                }
-        }
-}
-*/
 
 .homepage-box {
         height: auto;
