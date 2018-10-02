@@ -369,7 +369,7 @@ function el_homepage_box_shortcode( $atts, $content = null ) {
 	);
 
 	if ($atts['img']) {
-		$img_url = wp_get_attachment_image_src( $atts['img'] )[0]; //"http://ethicallettings.test/wp-content/themes/ethicallettings/images/prs-logo.png";
+		$img_url = wp_get_attachment_image_src( $atts['img'], "full" )[0];
 	} else {
 		$img_url = get_stylesheet_directory_uri() . "/images/homepage-box-blank-image.png";
 	}
