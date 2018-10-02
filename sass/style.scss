@@ -196,6 +196,30 @@ $header_padding: 28px;
 
 }
 
+@media (max-width: $bp_large) {
+        #banner-image {
+                height: 160px;
+        }
+}
+
+@media (max-width: $bp_med) {
+        #banner-image {
+                height: 140px;
+        }
+}
+
+@media (max-width: $bp_small) {
+        #banner-image {
+                height: 120px;
+        }
+}
+
+@media (max-width: $bp_really_small) {
+        #banner-image {
+                height: 80px;
+        }
+}
+
 /*--------------------------------------------------------------
 # Navigation (see also _menus.scss)
 --------------------------------------------------------------*/

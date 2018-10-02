@@ -1118,6 +1118,26 @@ object {
   background-position: center;
 }
 
+@media (max-width: 950px) {
+  #banner-image {
+    height: 160px;
+  }
+}
+@media (max-width: 750px) {
+  #banner-image {
+    height: 140px;
+  }
+}
+@media (max-width: 675px) {
+  #banner-image {
+    height: 120px;
+  }
+}
+@media (max-width: 375px) {
+  #banner-image {
+    height: 80px;
+  }
+}
 /*--------------------------------------------------------------
 # Navigation (see also _menus.scss)
 --------------------------------------------------------------*/
