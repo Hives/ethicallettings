@@ -43,9 +43,9 @@
 
 			<div class="sidebar right">
 				<div class="social">
-					<a href="https://twitter.com/ethicallettings" title=""><i class="fab fa-twitter-square"></i></a><br>
-					<a href="https://www.facebook.com/ethicallettings" title=""><i class="fab fa-facebook-square"></i></a><br>
-					<a href="https://www.linkedin.com/company/ethical-lettings" title=""><i class="fab fa-linkedin"></i></a>
+					<a href="https://twitter.com/ethicallettings" target="_blank" title="Ethical Lettings on Twitter"><i class="fab fa-twitter-square"></i></a><br>
+					<a href="https://www.facebook.com/ethicallettings" target="_blank" title="Ethical Lettings on Facebook"><i class="fab fa-facebook-square"></i></a><br>
+					<a href="https://www.linkedin.com/company/ethical-lettings" target="_blank" title="Ethical Lettings on LinkedIn"><i class="fab fa-linkedin"></i></a>
 				</div>
 			</div>
 
