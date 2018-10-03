@@ -1507,8 +1507,7 @@ form.contact-form input[type=submit]:hover {
   width: 20%;
   min-width: 90px;
   background-color: white;
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center center;
 }
 

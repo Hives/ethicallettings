@@ -638,8 +638,8 @@ $column-margin: 30px;
         width: 20%;
         min-width: 90px;
         background-color: $el_white;
-        background-repeat: no-repeat;
-        background-size: contain;
+        // background-repeat: no-repeat;
+        background-size: cover;
         background-position: center center;
 }
 
