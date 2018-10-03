@@ -1228,6 +1228,21 @@ object {
   margin-bottom: 0;
 }
 
+a.jellymould {
+  display: inline-block;
+  vertical-align: text-bottom;
+  position: relative;
+  bottom: 1px;
+  height: 15px;
+  width: 91px;
+  background-position: 0 -20px;
+  background-image: url(images/jellymould-logo.png);
+  text-indent: -9999px;
+}
+a.jellymould:hover {
+  background-position: 0 0;
+}
+
 .social {
   font-size: 2em;
   line-height: 1.3;

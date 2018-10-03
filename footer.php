@@ -37,6 +37,9 @@
 						Registered Company Number 07917040<br>
 						Pound House, Pound Lane, Godalming, Surrey GU7 1BX
 					</p>
+					<p>
+						Website by <a href="http://www.jellymouldcreative.com/" title="Jellymould" target="_blank" class="jellymould">Jellymould</a>
+					</p>
 				</div>
 				
 			</div>
