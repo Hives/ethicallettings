@@ -11,6 +11,8 @@
 
 $environment = WP_DEBUG == true ? "local" : "production";
 
+global $post;
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -71,6 +73,17 @@ $environment = WP_DEBUG == true ? "local" : "production";
 
 	</header><!-- #masthead -->
 
-    <div id="banner-image"></div>
+	<?php
+		$featured_image_id = get_post_thumbnail_id( $post->ID );
+		$featured_image_src = wp_get_attachment_image_src( $featured_image_id, 'full ');
+
+		if ($featured_image_src) {
+			$banner_src = $featured_image_src[0];
+		} else {
+			$banner_src = get_template_directory_uri() . "/images/default-banner.jpg";
+		}
+	?>
+
+	<div id="banner-image" style="background-image: url(<?php echo $banner_src; ?>)"></div>
 
 	<div id="content" class="site-content full-width">
