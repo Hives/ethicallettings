@@ -417,3 +417,13 @@ function mv_browser_body_class($classes) {
         return $classes;
 }
 add_filter('body_class','mv_browser_body_class');
+
+/**
+ * Completely stop the featured imaged displaying at the top of any page
+ *
+ * @link https://www.webhostinghero.com/remove-featured-image-in-wordpress/
+ */
+function my_post_image_html( $html, $post_id, $post_image_id ) {
+	return '';
+}
+add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
