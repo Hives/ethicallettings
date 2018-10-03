@@ -12,7 +12,7 @@
 $environment = WP_DEBUG == true ? "local" : "production";
 
 if ( WP_DEBUG == true ) {
-	if ( defined(PAULS_SERVER) && PAULS_SERVER == true ) {
+	if ( defined( 'PAULS_SERVER' ) && PAULS_SERVER == true ) {
 		$environment = "local";
 	} else {
 		$environment = "staging";
