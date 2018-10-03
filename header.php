@@ -11,6 +11,16 @@
 
 $environment = WP_DEBUG == true ? "local" : "production";
 
+if ( WP_DEBUG == true ) {
+	if ( PAULS_SERVER == true ) {
+		$environment = "local";
+	} else {
+		$environment = "staging";
+	}
+} else {
+	$environment = "production";
+}
+
 global $post;
 
 ?>
@@ -27,14 +37,24 @@ global $post;
 
 <body <?php body_class(); ?>>
 
-<?php if ( $environment == "local" ) { ?>
-	<div id="test-server-warning">
-		<div class= "vertical-section full-width">
-			<p class="warning">
-				<i class="fas fa-exclamation-triangle"></i> This is a test version of the site <i class="fas fa-exclamation-triangle"></i>
-			</p>
+<?php if ( $environment != "production" ) { ?>
+    <?php if ( $environment == 'local' ) { ?>
+		<div id="test-server-warning" class="local">
+			<div class= "vertical-section full-width">
+				<p class="warning">
+					<i class="fas fa-exclamation-triangle"></i> This is a test site running on Paul's computer <i class="fas fa-exclamation-triangle"></i>
+				</p>
+			</div>
 		</div>
-	</div>
+	<?php } else { ?>
+		<div id="test-server-warning">
+			<div class= "vertical-section full-width">
+				<p class="warning">
+					<i class="fas fa-exclamation-triangle"></i> This is a test site running on the staging server<i class="fas fa-exclamation-triangle"></i>
+				</p>
+			</div>
+		</div>
+	<?php } ?>
 <?php } ?>
 
 <div id="page" class="site">

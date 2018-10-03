@@ -752,6 +752,10 @@ $wp-block-margin: 30px;
         padding-top: 10px;
         padding-bottom: 10px;
 
+        &.local {
+                background-color: #b90000;
+        }
+
         p {
                 background-color: rgba(255, 255, 255, 0.85);
                 margin: 0;
