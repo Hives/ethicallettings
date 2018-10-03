@@ -42,7 +42,7 @@ global $post;
 		<div id="test-server-warning" class="local">
 			<div class= "vertical-section full-width">
 				<p class="warning">
-					<i class="fas fa-exclamation-triangle"></i> This is a test site running on Paul's computer <i class="fas fa-exclamation-triangle"></i>
+					<i class="fas fa-exclamation-triangle"></i>This is a test site running on Paul's computer<i class="fas fa-exclamation-triangle"></i>
 				</p>
 			</div>
 		</div>
@@ -50,7 +50,7 @@ global $post;
 		<div id="test-server-warning">
 			<div class= "vertical-section full-width">
 				<p class="warning">
-					<i class="fas fa-exclamation-triangle"></i> This is a test site running on the staging server<i class="fas fa-exclamation-triangle"></i>
+					<i class="fas fa-exclamation-triangle"></i>This is a test site running on the staging server<i class="fas fa-exclamation-triangle"></i>
 				</p>
 			</div>
 		</div>

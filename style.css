@@ -1623,6 +1623,7 @@ form.contact-form input[type=submit]:hover {
 }
 #test-server-warning p.warning i {
   color: #880000;
+  margin: 0 10px;
 }
 
 @media (max-width: 675px) {
