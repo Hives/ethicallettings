@@ -18,8 +18,6 @@ get_header();
 	<div id="primary" class="content-area wrapper page-template">
 		<main id="main" class="site-main left">
 
-		<h1>Whut</h1>
-
 		<?php
 		while ( have_posts() ) :
 			the_post();
