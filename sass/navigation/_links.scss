@@ -17,3 +17,16 @@ a {
 		outline: 0;
 	}
 }
+
+.site-footer .left {
+	a {
+		&:visited {
+			color: $color__link;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__link-hover;
+		}
+	}
+}

@@ -641,6 +641,13 @@ a:hover, a:active {
   outline: 0;
 }
 
+.site-footer .left a:visited {
+  color: #00b6e4;
+}
+.site-footer .left a:hover, .site-footer .left a:focus, .site-footer .left a:active {
+  color: #89Ab2D;
+}
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
