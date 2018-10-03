@@ -38,7 +38,7 @@
 						Pound House, Pound Lane, Godalming, Surrey GU7 1BX
 					</p>
 					<p>
-						<a href="#" title="Privacy Statement">Privacy Statement</a>
+						<a href="/privacy-statement" title="Privacy Statement">Privacy Statement</a>
 					</p>
 					<p>
 						Website by <a href="http://www.jellymouldcreative.com/" title="Jellymould" target="_blank" class="jellymould">Jellymould</a>
