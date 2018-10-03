@@ -31,7 +31,7 @@
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" alt="The ethical lettings logo" />
 					<p>
 						<span class="phone-number fa-phone icon">01483 429157</span><br>
-						<span class="email-address fa-envelope icon"><a href="mailto:info@ethical-lettings.com?subject=hello" "Email us">info@ethical-lettings.com</a></span>
+						<span class="email-address fa-envelope icon"><a href="mailto:info@ethical-lettings.com" "Email us">info@ethical-lettings.com</a></span>
 					</p>
 					<p>
 						Registered Company Number 07917040<br>
