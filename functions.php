@@ -379,6 +379,25 @@ function el_homepage_box_shortcode( $atts, $content = null ) {
 }
 add_shortcode( 'homepage_box', 'el_homepage_box_shortcode' );
 
+/**
+ * partners shortcode
+ */
+function el_partners_shortcode( $atts, $content = null ) {
+
+	// Attributes
+	// $atts = shortcode_atts(
+	// 	array(
+	// 		'pos' => 'left',
+	// 	),
+	// 	$atts,
+	// 	'column'
+	// );
+	// $classes = array('shortcode-column');
+	// $classes[] = "shortcode-column-" . $atts['pos'];
+
+	return '<div class="el-partners">' . do_shortcode($content) . '</div>';	
+}
+add_shortcode( 'partners', 'el_partners_shortcode' );
 
 /**
  * location map shortcode
