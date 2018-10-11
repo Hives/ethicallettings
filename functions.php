@@ -302,9 +302,15 @@ class el_quotation_widget extends WP_Widget
     	for ($i=0; $i < 3; $i++) { 
 			if ( !empty( $quotation[$i] ) ) { ?>
 				<section class="quotation">
+					<blockquote><?php echo $quotation[$i]; ?></blockquote>
+					<?php /*
 					<p class="quotation-text">&ldquo;<?php echo $quotation[$i]; ?>&rdquo;</p>
+					*/ ?>
 					<?php if ( !empty( $name[$i] ) ) { ?>
+						<cite><?php echo $name[$i]; ?></cite>
+						<?php /*
 						<p class="who-said-it"><?php echo $name[$i]; ?></p>
+						*/ ?>
 					<?php } ?>
 				</section>
 			<?php }

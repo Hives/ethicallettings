@@ -894,25 +894,46 @@ a:hover, a:active {
   max-width: 100%;
 }
 
-.quotation {
-  font-style: italic;
+blockquote {
   font-size: 1.65rem;
   line-height: 1.25;
-  border-bottom: 4px solid #00b6e4;
-  margin-bottom: 50px;
-}
-
-.quotation-text {
+  font-style: italic;
   font-weight: 300;
   margin: 0 0 0.5em 0;
 }
+blockquote:before {
+  content: open-quote;
+}
+blockquote:after {
+  content: close-quote;
+}
+blockquote p {
+  display: inline;
+}
 
-.who-said-it {
+cite {
+  display: block;
   color: #00b6e4;
   font-weight: 700;
-  font-size: 0.85em;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  font-style: italic;
   margin-top: 20px;
-  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 4px solid #00b6e4;
+}
+
+.entry-content blockquote {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.entry-content cite {
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
+
+.quotation {
+  margin-bottom: 50px;
 }
 
 @media (max-width: 950px) {
