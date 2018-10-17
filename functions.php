@@ -301,7 +301,7 @@ class el_quotation_widget extends WP_Widget
 
     	for ($i=0; $i < 3; $i++) { 
 			if ( !empty( $quotation[$i] ) ) { ?>
-				<section class="quotation">
+				<section class="quotation testimony">
 					<blockquote><?php echo $quotation[$i]; ?></blockquote>
 					<?php /*
 					<p class="quotation-text">&ldquo;<?php echo $quotation[$i]; ?>&rdquo;</p>
@@ -404,6 +404,26 @@ function el_partners_shortcode( $atts, $content = null ) {
 	return '<div class="el-partners">' . do_shortcode($content) . '</div>';	
 }
 add_shortcode( 'partners', 'el_partners_shortcode' );
+
+/**
+ * pull quote shortcode
+ */
+function el_pullquote_shortcode( $atts, $content = null ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'cite' => false,
+		),
+		$atts
+		// 'pullquote'
+	);
+
+	$cite = $atts['cite'] ? "<cite>" . $atts['cite'] ."</cite>" : "";
+
+	return '<div class="testimony"><blockquote>' . $content . '</blockquote>' . $cite . '</div>';	
+}
+add_shortcode( 'pullquote', 'el_pullquote_shortcode' );
 
 /**
  * location map shortcode
