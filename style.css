@@ -1468,6 +1468,14 @@ form.contact-form input[type=submit]:hover {
   cursor: pointer;
 }
 
+.error {
+  color: red;
+}
+
+div.error {
+  margin-bottom: 5px;
+}
+
 /*--------------------------------------------------------------
 # Styling for columns shortcode
 --------------------------------------------------------------*/

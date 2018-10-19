@@ -609,6 +609,15 @@ form.contact-form {
         }
 }
 
+// n.b. this will effect any element with the error class applied. is this
+// a standard class? or is it just used by the captcha plugin? dunno.
+.error {
+        color: red;
+}
+div.error {
+        margin-bottom: 5px;        
+}
+
 /*--------------------------------------------------------------
 # Styling for columns shortcode
 --------------------------------------------------------------*/
