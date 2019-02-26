@@ -126,6 +126,15 @@ function ethicallettings_scripts() {
 
 	wp_enqueue_script( 'ethicallettings-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+    wp_enqueue_script( 'popper', get_stylesheet_directory_uri() . '/plugins/popper/popper.min.js', array(), 20141119 );
+
+    // all styles
+    // wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/plugins/bootstrap/css/bootstrap.css', array(), 20141119 );
+    // wp_enqueue_style( 'theme-style', get_stylesheet_directory_uri() . '/plugins/bootstrap/css/style.css', array(), 20141119 );
+    // all scripts
+    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/plugins/bootstrap/js/bootstrap.min.js', array('jquery'), '20120206', true );
+    wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/plugins/bootstrap/js/scripts.js', array('jquery'), '20120206', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -462,6 +471,17 @@ function mv_browser_body_class($classes) {
         return $classes;
 }
 add_filter('body_class','mv_browser_body_class');
+
+/**
+ * WP Bootstrap Navwalker
+ *
+ * A custom WordPress Nav Walker Class to fully implement the Bootstrap 4
+ * navigation style in a custom theme using the WordPress built in menu
+ * manager.
+ *
+ * @link https://github.com/wp-bootstrap/wp-bootstrap-navwalker
+ */
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
 /**
  * Completely stop the featured imaged displaying at the top of any page

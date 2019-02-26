@@ -88,11 +88,22 @@ global $post;
 
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'ethicallettings' ); ?></button>
+
 				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
+				// wp_nav_menu( array(
+				//     'theme_location' => 'menu-1',
+				//     'menu_id'        => 'primary-menu',
+				// ) );
+                wp_nav_menu( array(
+                	'theme_location'  => 'menu-1',
+                	'depth'	          => 4, // 1 = no dropdowns, 2 = with dropdowns.
+                	'container'       => 'div',
+                	'container_class' => 'navbar-collapse',
+                	'container_id'    => 'main-navigation',
+                	'menu_class'      => 'navbar-nav mr-auto',
+                	'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                	'walker'          => new WP_Bootstrap_Navwalker(),
+                ) );
 				?>
 	        </nav><!-- #site-navigation -->
 
