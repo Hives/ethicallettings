@@ -705,7 +705,7 @@ ul.dropdown-menu {
     overflow: hidden; }
 
   .toggled #menu-ethical-lettings-menu {
-    max-height: 450px;
+    max-height: 700px;
     transition: max-height 0.5s ease-out; } }
 /*--------------------------------------------------------------
 # Accessibility
