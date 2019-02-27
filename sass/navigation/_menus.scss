@@ -137,7 +137,7 @@ $caret-width: 0.4em;
                     max-width: 200px;
                     a {
                         display: inline-block;
-                        font-weight: bold;
+                        // font-weight: bold;
                         font-size: 95%;
                         width: 100%;
                         padding: 7px 12px;
@@ -164,12 +164,15 @@ $caret-width: 0.4em;
         > li > .dropdown-menu {
             // [> first submenu <]
             a { background-color: $el_menu_1; }
+            a:hover { background-color: $el_menu_1_hover; }
             > li > .dropdown-menu {
                 // [> second submenu <]
                 a { background-color: $el_menu_2; }
+                a:hover { background-color: $el_menu_2_hover; }
                 > li > .dropdown-menu {
                     // [> third submenu <]
                     a { background-color: $el_menu_3; }
+                    a:hover { background-color: $el_menu_3_hover; }
                 }
             }
         }

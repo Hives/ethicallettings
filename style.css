@@ -596,7 +596,7 @@ a {
     margin-left: 15px;
     padding: 5px 0; }
     #main-navigation ul#menu-ethical-lettings-menu > li.current-menu-item > a, #main-navigation ul#menu-ethical-lettings-menu > li.current-menu-ancestor > a {
-      border-bottom: 5px solid #91A943; }
+      border-bottom: 5px solid #6D8A24; }
     #main-navigation ul#menu-ethical-lettings-menu > li:hover > a {
       border-bottom: 5px solid #8f8e8e; }
     #main-navigation ul#menu-ethical-lettings-menu > li.dropdown > a::after {
@@ -611,7 +611,7 @@ a {
     #main-navigation ul#menu-ethical-lettings-menu > li.dropdown > a:empty::after {
       eargin-left: 0; }
     #main-navigation ul#menu-ethical-lettings-menu > li.dropdown > a::after {
-      color: #91A943; }
+      color: #6D8A24; }
     #main-navigation ul#menu-ethical-lettings-menu > li.dropdown.show > a {
       border-bottom: 5px solid #8f8e8e; }
       #main-navigation ul#menu-ethical-lettings-menu > li.dropdown.show > a::after {
@@ -640,7 +640,6 @@ a {
         opacity: 1; }
       #main-navigation ul#menu-ethical-lettings-menu > li > ul.dropdown-menu a {
         display: inline-block;
-        font-weight: bold;
         font-size: 95%;
         width: 100%;
         padding: 7px 12px;
@@ -652,11 +651,17 @@ a {
         padding-left: 36px; }
 
   #menu-ethical-lettings-menu > li > .dropdown-menu a {
-    background-color: #91A943; }
+    background-color: #6D8A24; }
+  #menu-ethical-lettings-menu > li > .dropdown-menu a:hover {
+    background-color: #576F1C; }
   #menu-ethical-lettings-menu > li > .dropdown-menu > li > .dropdown-menu a {
-    background-color: #ACB53D; }
+    background-color: #89AB2D; }
+  #menu-ethical-lettings-menu > li > .dropdown-menu > li > .dropdown-menu a:hover {
+    background-color: #6D8A24; }
   #menu-ethical-lettings-menu > li > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu a {
-    background-color: #C2C351; } }
+    background-color: #B9CF29; }
+  #menu-ethical-lettings-menu > li > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu a:hover {
+    background-color: #89AB2D; } }
 ul.dropdown-menu {
   padding: 0;
   margin: 0; }
